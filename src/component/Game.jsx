@@ -29,6 +29,14 @@ const Game = () => {
 		}
 	}, [selectedBox]);
 
+	useEffect(() => {
+		return () => {
+			if (intervalId !== null) {
+				clearInterval(intervalId);
+			}
+		};
+	}, []);
+
 	return (
 		<>
 			<div className="gameCon">
